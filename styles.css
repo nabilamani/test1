@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #2E86C1;
+    color: white;
+}
+header h1 {
+    margin: 5px 0;
+    font-size: 24px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.logo img {
+    height: 60px;
+    margin: 0 10px;
+}
+
+/* Welcome page styling */
+#welcome-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background: 
+        linear-gradient(rgba(52, 152, 219, 0.7), rgba(52, 152, 219, 0.7)), /* Warna biru dengan transparansi */
+        url('img/background-welcome.jpg'); /* Ganti dengan path gambar Anda */
+    background-size: cover; /* Menutup seluruh area dengan gambar */
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+#welcome-page h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#welcome-page p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+#welcome-page button {
+    padding: 15px 30px;
+    background-color: #2ECC71;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#welcome-page button:hover {
+    background-color: #27AE60;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.menu-item {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 30px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+}
+
+.menu-item:hover {
+    background-color: #218838;
+}
+
+.sub-menu {
+    display: flex; /* Semua submenu disembunyikan secara default */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.sub-menu button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #17a2b8;
+    color: white;
+    padding: 10px 150px;
+    margin: 5px auto;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+}
+.sub-menu button:hover {
+    background-color: #138496;
+}
+
+#back-button button {
+    background-color: #ffc107;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#back-button button:hover {
+    background-color: #e0a800;
+}
+
+@media (max-width: 600px) {
+    .menu-item, .sub-menu button {
+        width: 90%;
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Homepage</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo kominfo.png" alt="">
+            <img src="img/Logo-skh.png" alt="">
+        </div>
+        <h1>Survey Pengalaman Pengguna Smart City</h1>
+    </header>
+
+    <!-- Welcome Page -->
+    <section id="welcome-page">
+        <h1>Selamat Datang di Survey Pengalaman Smart City Sukoharjo</h1>
+        <p>Terima kasih telah berpartisipasi dalam survei kami. Kami menghargai waktu dan masukan Anda untuk membantu meningkatkan layanan Smart City Sukoharjo.</p>
+        <button id="start-survey-button" onclick="startSurvey()">Lanjutkan</button>
+    </section>
+
+    <!-- Survey Page (Initially Hidden) -->
+    <div id="survey-page" style="display:none;">
+        <header>
+            <h1>Survey Pengalaman</h1>
+            <p>Deskripsi singkat tentang halaman ini.</p>
+        </header>
+
+        <nav class="menu">
+            <button class="menu-item" onclick="toggleSubMenu('menu1')">Layanan 1</button>
+            <div class="sub-menu" id="menu1">
+                <button onclick="location.href='https://forms.gle/f7zorsXHBLocMSnR8'">SubDimensi 1.1</button>
+                <button onclick="location.href='https://forms.gle/iJHuUWsBroQXadk38'">SubDimensi 1.2</button>
+                <button onclick="location.href='https://forms.gle/4DJ1ovGCPFdCPuAEA'">SubDimensi 1.2</button>
+            </div>
+            <button class="menu-item" onclick="toggleSubMenu('menu2')">Layanan 2</button>
+            <div class="sub-menu" id="menu2">
+                <button onclick="location.href='https://forms.gle/pKro4XT76KQRfhRx6'">SubDimensi 2.1</button>
+                <button onclick="location.href='https://forms.gle/f3L6kGdN32yb1wjf6'">SubDimensi 2.2</button>
+                <button onclick="location.href='https://forms.gle/wnn3D2PrUfKzFzmd9'">SubDimensi 2.2</button>
+            </div>
+            <button class="menu-item" onclick="toggleSubMenu('menu3')">Layanan 3</button>
+            <div class="sub-menu" id="menu3">
+                <button onclick="location.href='https://forms.gle/X8jb68adoQCjUPvs5'">SubDimensi 3.1</button>
+                <button onclick="location.href='https://forms.gle/1hH7SL2uVaDjWwYY7'">SubDimensi 3.2</button>
+                <button onclick="location.href='https://forms.gle/vqzvsLrV9uz5yLj47'">SubDimensi 3.2</button>
+            </div>
+            <button class="menu-item" onclick="toggleSubMenu('menu4')">Layanan 4</button>
+            <div class="sub-menu" id="menu4">
+                <button onclick="location.href='https://forms.gle/uTx95DeTxTAAHtRw5'">SubDimensi 4.1</button>
+                <button onclick="location.href='https://forms.gle/o647sDjii5gMRvAJ8'">SubDimensi 4.2</button>
+                <button onclick="location.href='https://forms.gle/mYX6EKTWyKCCiqTq6'">SubDimensi 4.2</button>
+            </div>
+            <button class="menu-item" onclick="toggleSubMenu('menu5')">Layanan 5</button>
+            <div class="sub-menu" id="menu5">
+                <button onclick="location.href='https://forms.gle/a4nCN5pojT8JzD226'">SubDimensi 5.1</button>
+                <button onclick="location.href='https://forms.gle/8Jpo1qFa6PWtL6HH8'">SubDimensi 5.2</button>
+                <button onclick="location.href='https://forms.gle/3kmTb3RG5EPXDxpbA'">SubDimensi 5.2</button>
+            </div>
+            <button class="menu-item" onclick="toggleSubMenu('menu6')">Layanan 6</button>
+            <div class="sub-menu" id="menu6">
+                <button onclick="location.href='https://forms.gle/m2E3Mmi3ugYmL78D6'">SubDimensi 6.1</button>
+                <button onclick="location.href='https://forms.gle/Wpi7xH2VX8K3G5ct5'">SubDimensi 6.2</button>
+                <button onclick="location.href='https://forms.gle/Wo43RDD7fNxURvkG9'">SubDimensi 6.2</button>
+            </div>
+        </nav>
+
+        <div id="back-button" style="display: none; text-align: center; margin-top: 20px;">
+            <button onclick="goBack()">Kembali ke Layanan</button>
+        </div>
+    </div>
+
+    <script>
+        // Hide the survey page initially
+        document.querySelectorAll('.sub-menu').forEach(submenu => {
+            submenu.style.display = 'none';
+        });
+
+        function toggleSubMenu(menuId) {
+            const submenu = document.getElementById(menuId);
+            const allMenuItems = document.querySelectorAll('.menu-item');
+
+            allMenuItems.forEach(item => item.style.display = 'none'); // Menyembunyikan semua layanan
+            submenu.style.display = 'block'; // Menampilkan submenu yang diklik
+            document.getElementById('back-button').style.display = ''; // Menampilkan tombol kembali
+        }
+
+        function goBack() {
+            const allMenuItems = document.querySelectorAll('.menu-item');
+            const allSubmenus = document.querySelectorAll('.sub-menu');
+
+            allMenuItems.forEach(item => item.style.display = 'block'); // Menampilkan semua layanan
+            allSubmenus.forEach(sub => sub.style.display = 'none'); // Menyembunyikan semua submenu
+            document.getElementById('back-button').style.display = 'none'; // Menyembunyikan tombol kembali
+        }
+
+        // Function to start the survey
+        function startSurvey() {
+            document.getElementById('welcome-page').style.display = 'none'; // Hide welcome page
+            document.getElementById('survey-page').style.display = 'block'; // Show survey page
+        }
+    </script>
+</body>
+</html>
