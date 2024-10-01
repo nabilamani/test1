@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Survey Layanan</title>
+    <style>
+        /* Styling untuk elemen menu */
+        .menu-item {
+            display: block;
+            padding: 15px;
+            text-align: center;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background-color: #54ba6c;
+        }
+
+        /* Styling untuk submenu */
+    
+
+        /* Styling untuk deskripsi yang akan muncul di bawah saat di-hover */
+        .description {
+            display: none;
+            padding: 10px;
+            text-align: center;
+            background-color: #e9f0f5;
+            color: #333;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            border-radius: 20px;
+        }
+
+        /* Deskripsi muncul saat menu di-hover */
+        .menu-item:hover .description {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo kominfo.png" alt="Logo Kominfo">
+            <img src="img/Logo-skh.png" alt="Logo Sukoharjo">
+        </div>
+        <h1>Survey Evaluasi Program Smart City</h1>
+    </header>
+
+    <!-- Welcome Page -->
+    <section id="welcome-page">
+        <h1>Selamat Datang di Survey Evaluasi Smart City Sukoharjo</h1>
+        <p>Terima kasih telah berpartisipasi dalam survei kami. Kami menghargai waktu dan masukan Anda untuk membantu meningkatkan layanan Smart City Sukoharjo.</p>
+        <button id="start-survey-button" onclick="startSurvey()">Lanjutkan</button>
+    </section>
+    <hr style="height: 1px; margin: 0; padding: 0;">
+
+    <!-- Survey Page (Initially Hidden) -->
+    <div id="survey-page" style="display:none;">
+        <header>
+            <h1>Daftar Layanan</h1>
+            <p>Silakan pilih layanan yang ingin Anda tinjau.</p>
+        </header>
+
+        <nav class="menu">
+            <div class="menu-item" onclick="toggleSubMenu('menu1')">Smart - Governance
+                <div class="description">Layanan terkait pengelolaan tata kelola pemerintahan berbasis teknologi.</div>
+            </div>
+            <div class="sub-menu" id="menu1">
+                <h1>Smart - Governance</h1>
+                <button onclick="location.href='https://forms.gle/f7zorsXHBLocMSnR8'">Aplikasi Spion (Perjanjian Online)</button>
+                <button onclick="location.href='https://forms.gle/iJHuUWsBroQXadk38'">Aplikasi Musren & Forum</button>
+                <button onclick="location.href='https://forms.gle/4DJ1ovGCPFdCPuAEA'">Portal sukoharjokab.go.id</button>
+            </div>
+
+            <div class="menu-item" onclick="toggleSubMenu('menu2')">Smart - Branding
+                <div class="description">Layanan yang berhubungan dengan pengembangan ekonomi berbasis digital.</div>
+            </div>
+            <div class="sub-menu" id="menu2">
+                <h1>Smart - Branding</h1>
+                <button onclick="location.href='https://forms.gle/pKro4XT76KQRfhRx6'">Desa Wisata Jangglengan</button>
+                <button onclick="location.href='https://forms.gle/f3L6kGdN32yb1wjf6'">Aplikasi RIS (Ruang Investasi Sukoharjo)</button>
+                <button onclick="location.href='https://forms.gle/wnn3D2PrUfKzFzmd9'">Ikon & Wajah Kota</button>
+            </div>
+
+            <div class="menu-item" onclick="toggleSubMenu('menu3')">Smart - Economy
+                <div class="description">Layanan terkait dengan peningkatan kualitas hidup masyarakat.</div>
+            </div>
+            <div class="sub-menu" id="menu3">
+                <h1>Smart - Economy</h1>
+                <button onclick="location.href='https://forms.gle/X8jb68adoQCjUPvs5'">Pemasaran Produk Usaha Mikro</button>
+                <button onclick="location.href='https://forms.gle/1hH7SL2uVaDjWwYY7'">Bursa Kerja</button>
+                <button onclick="location.href='https://forms.gle/vqzvsLrV9uz5yLj47'">PAGODA (Pasar Go Digital)</button>
+            </div>
+
+            <div class="menu-item" onclick="toggleSubMenu('menu4')">Smart - Living
+                <div class="description">Layanan yang mendukung pembangunan sosial dan masyarakat.</div>
+            </div>
+            <div class="sub-menu" id="menu4">
+                <h1>Smart - Living</h1>
+                <button onclick="location.href='https://forms.gle/uTx95DeTxTAAHtRw5'">Kampung KB</button>
+                <button onclick="location.href='https://forms.gle/o647sDjii5gMRvAJ8'">Ndog Dadar / Perpustakaan</button>
+                <button onclick="location.href='https://forms.gle/mYX6EKTWyKCCiqTq6'">PSC 119 - Dinkes</button>
+            </div>
+
+            <div class="menu-item" onclick="toggleSubMenu('menu5')">Smart - Society
+                <div class="description">Layanan yang fokus pada keberlanjutan dan lingkungan.</div>
+            </div>
+            <div class="sub-menu" id="menu5">
+                <h1>Smart - Society</h1>
+                <button onclick="location.href='https://forms.gle/a4nCN5pojT8JzD226'">Sirusuk & SipSuper</button>
+                <button onclick="location.href='https://forms.gle/8Jpo1qFa6PWtL6HH8'">E-Hospital / Daftaf Online</button>
+                <button onclick="location.href='https://forms.gle/3kmTb3RG5EPXDxpbA'">Aplikasi E-Kir</button>
+            </div>
+
+            <div class="menu-item" onclick="toggleSubMenu('menu6')" style="margin-bottom: 20p;">Smart - Environment
+                <div class="description">Layanan terkait promosi dan pencitraan daerah.</div>
+            </div>
+            <div class="sub-menu" id="menu6">
+                <h1>Smart - Environment</h1>
+                <button onclick="location.href='https://forms.gle/m2E3Mmi3ugYmL78D6'">Pengendalian Pencemaran</button>
+                <button onclick="location.href='https://forms.gle/Wpi7xH2VX8K3G5ct5'">Kampung Iklim</button>
+                <button onclick="location.href='https://forms.gle/Wo43RDD7fNxURvkG9'">Energi Alternatif dari Sampah/Matahari</button>
+            </div>
+        </nav>
+
+        <div id="back-button" style="display: none; text-align: center; margin-top: 20px; margin-bottom: 20px;">
+            <button onclick="goBack()">Kembali ke Layanan</button>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.sub-menu').forEach(submenu => {
+            submenu.style.display = 'none';
+        });
+
+        function toggleSubMenu(menuId) {
+            const submenu = document.getElementById(menuId);
+            const allMenuItems = document.querySelectorAll('.menu-item');
+
+            allMenuItems.forEach(item => item.style.display = 'none');
+            submenu.style.display = 'block';
+            document.getElementById('back-button').style.display = '';
+        }
+
+        function goBack() {
+            const allMenuItems = document.querySelectorAll('.menu-item');
+            const allSubmenus = document.querySelectorAll('.sub-menu');
+
+            allMenuItems.forEach(item => item.style.display = 'block');
+            allSubmenus.forEach(sub => sub.style.display = 'none');
+            document.getElementById('back-button').style.display = 'none';
+        }
+
+        function startSurvey() {
+            document.getElementById('welcome-page').style.display = 'none';
+            document.getElementById('survey-page').style.display = 'block';
+        }
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+</body>
+</html>

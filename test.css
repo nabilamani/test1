@@ -1,0 +1,296 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #2E86C1;
+    color: white;
+}
+
+header h1 {
+    margin: 5px 0;
+    font-size: 24px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.logo img {
+    height: 60px;
+    margin: 10px 10px 0px;
+}
+
+/* Welcome page styling */
+#welcome-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    background:
+        linear-gradient(rgba(52, 152, 219, 0.7), rgba(52, 152, 219, 0.7)),
+        /* Warna biru dengan transparansi */
+        url('img/background-welcome.jpg');
+    /* Ganti dengan path gambar Anda */
+    background-size: cover;
+    /* Menutup seluruh area dengan gambar */
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5% 10%;
+}
+
+
+#welcome-page h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#welcome-page p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+#welcome-page button {
+    padding: 15px 50px;
+    background: linear-gradient(to left, #0097b2, #7ed957);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.9s;
+}
+
+#welcome-page button:hover {
+    background: linear-gradient(to right, #7ed957, #7ed957);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px auto;
+    height: 100%;
+}
+
+.menu-item {
+    background: linear-gradient(to right, #0097b2, #7ed957);
+
+    border-radius: 25px;
+    color: white;
+    padding: 15px 30px;
+    margin: 5px auto;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+}
+
+.menu-item:hover {
+    background-color: #218838;
+}
+
+.sub-menu {
+    display: flex;
+    /* Semua submenu disembunyikan secara default */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: -20px;
+    transition: ease 0.5;
+}
+
+.sub-menu h1 {
+    padding-top: 10px;
+}
+
+.sub-menu button {
+    display: flex;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #17a2b8;
+    color: white;
+    padding: 15px 70px;
+    margin: 5px auto;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+}
+
+.sub-menu button:hover {
+    background-color: #138496;
+}
+
+.back-button button {
+    background-color: #ffc107;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 60%;
+    margin-bottom: 100px;
+}
+
+.back-button button:hover {
+    background-color: #e0a800;
+}
+
+
+
+
+.slideshow-container {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    max-width: 800px;
+    height: 120px;
+    overflow: hidden;
+}
+
+.slides {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: opacity 1s ease-in-out;
+}
+
+.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Styling untuk gambar */
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5); /* Membuat gambar lebih gelap */
+    border-radius: 3px;
+}
+
+/* Styling untuk dot navigasi */
+.dot-content{
+    margin-top: 8px;
+}
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 1px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active-dot {
+    background-color: #717171;
+}
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    .logo img {
+        height: 50px;
+        margin: 10px 10px 0px;
+    }
+
+    .menu-item,
+    .sub-menu button {
+        width: 90%;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px auto;
+        height: 70vh;
+    }
+    .back-button button {
+        width: 60%;
+    }
+
+
+
+    
+    .text-content {
+        max-width: 90%; /* Memperbesar lebar teks pada layar yang lebih kecil */
+        left: 10px;
+        bottom: 10px;
+        margin-right: 10px;
+    }
+
+    .text-content h2 {
+        font-size: 15px; /* Ukuran judul lebih kecil untuk tablet */
+    }
+
+    .text-content p {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .logo img {
+        height: 40px; /* Smaller height for the logo */
+        margin: 8px 8px 0px;
+    }
+    #welcome-page{
+        padding-top: 100px;
+    }
+    .menu-item,
+    .sub-menu button {
+        width: 95%; /* Slightly wider buttons for small screens */
+    }
+    header h1{
+        font-size: 20px;
+    }
+    #survey-page p{
+        font-size: 12px;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px auto;
+        height: 65vh; /* Adjust the height */
+    }
+    .menu-item{
+        width: 220px;
+    }
+    .back-button button {
+        width: 70%; /* Adjust button width */
+    }
+
+    .text-content {
+        max-width: 95%; /* Make text content a bit wider */
+        left: 5px; /* Adjust position */
+        bottom: 5px;
+        margin-right: 5px;
+    }
+
+    .text-content h2 {
+        font-size: 14px; /* Smaller heading font size */
+    }
+
+    .text-content p {
+        font-size: 10px; /* Smaller paragraph font size */
+    }
+}

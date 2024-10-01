@@ -8,7 +8,7 @@ body {
 
 header {
     text-align: center;
-    padding: 20px;
+    padding: 10px 20px;
     background-color: #2E86C1;
     color: white;
 }
@@ -24,7 +24,7 @@ header p {
 
 .logo img {
     height: 60px;
-    margin: 0 10px;
+    margin: 10px 10px 0px;
 }
 
 /* Welcome page styling */
@@ -33,7 +33,7 @@ header p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 70vh;
     background: 
         linear-gradient(rgba(52, 152, 219, 0.7), rgba(52, 152, 219, 0.7)), /* Warna biru dengan transparansi */
         url('img/background-welcome.jpg'); /* Ganti dengan path gambar Anda */
@@ -41,7 +41,7 @@ header p {
     background-position: center;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 5% 10%;
 }
 
 
@@ -78,9 +78,10 @@ header p {
 
 .menu-item {
     background-color: #28a745;
+    border-radius: 25px;
     color: white;
     padding: 15px 30px;
-    margin: 5px;
+    margin: 5px auto;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -96,7 +97,9 @@ header p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    text-align: center;
+    margin-top: -20px;
+    transition: ease 0.5;
 }
 
 .sub-menu button {
@@ -105,12 +108,12 @@ header p {
     align-items: center;
     background-color: #17a2b8;
     color: white;
-    padding: 10px 150px;
+    padding: 15px 70px;
     margin: 5px auto;
     border: none;
     cursor: pointer;
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
 }
 .sub-menu button:hover {
     background-color: #138496;
@@ -133,4 +136,10 @@ header p {
     .menu-item, .sub-menu button {
         width: 90%;
     }
+    .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+}
 }

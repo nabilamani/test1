@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Survey Layanan</title>
+    <style>
+        /* Styling untuk elemen menu */
+        .menu-item {
+            display: block;
+            padding: 15px;
+            text-align: center;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background-color: #54ba6c;
+        }
+
+        /* Styling untuk submenu */
+
+
+        /* Styling untuk deskripsi yang akan muncul di bawah saat di-hover */
+        .description {
+            display: none;
+            padding: 5px;
+            text-align: center;
+            background-color: #e9f0f5;
+            color: #333;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            border-radius: 15px;
+        }
+
+        /* Deskripsi muncul saat menu di-hover */
+        .menu-item:hover .description {
+            display: block;
+        }
+
+        .slides {
+            position: relative;
+        }
+
+        .text-content {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Background hitam semi transparan */
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            margin-right: 10px;
+        }
+
+        .text-content h2 {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .text-content p {
+            margin: 5px 0 0;
+            font-size: 11px;
+        }
+
+        .arrow-down {
+            text-align: center;
+            font-size: 30px;
+            top: 0px;
+            color: #2E86C1;
+            cursor: pointer;
+            margin-top: -10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo kominfo.png" alt="Logo Kominfo">
+            <img src="img/Logo-skh.png" alt="Logo Sukoharjo">
+        </div>
+        <h1>Survey Evaluasi Program Smart City</h1>
+    </header>
+
+    <!-- Welcome Page -->
+    <section id="welcome-page">
+        
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+        <dotlottie-player src="https://lottie.host/f6558db8-5724-4a38-aa94-4acacf540711/wmNEtjFmsL.json" background="transparent" speed="1" style="width: 150px; height: 150px; margin-top: -100px; margin-bottom: -10px;" loop autoplay></dotlottie-player>
+        <h1>Selamat Datang di Survey Evaluasi Smart City Sukoharjo</h1>
+        <p>Terima kasih telah berpartisipasi dalam survei kami. Kami menghargai waktu dan masukan Anda untuk membantu
+            meningkatkan layanan Smart City Sukoharjo.</p>
+        <button id="start-survey-button" onclick="startSurvey()">Lanjutkan</button>
+    </section>
+    <hr style="height: 1px; margin: 0; padding: 0;">
+
+    <!-- Survey Page (Initially Hidden) -->
+    <div id="survey-page" style="display:none;">
+        <header>
+            <h1>Daftar Layanan</h1>
+            <p>Silakan pilih layanan yang ingin Anda tinjau.</p>
+            <div class="slideshow-container">
+                <div class="slides">
+                    <img src="https://sukoharjonews.com/wp-content/uploads/2018/07/04-bintek.jpg" alt="Slide 1">
+                    <div class="text-content">
+                        <h2>Smart - Governance</h2>
+                        <p>Layanan terkait pengelolaan tata kelola pemerintahan berbasis teknologi.</p>
+                    </div>
+                </div>
+                <div class="slides">
+                    <img src="https://www.yodyakarya.id/images/Gallery/Gedung/2019_MKSukoharjo.jpg" alt="Slide 2">
+                    <div class="text-content">
+                        <h2>Smart - Branding</h2>
+                        <p>Layanan peningkatkan daya saing daerah melalui penataan kota dan promosi potensi lokal hingga internasional.</p>
+                    </div>
+                </div>
+                <div class="slides">
+                    <img src="https://jatengprov.go.id/wp-content/uploads/2018/12/IMG-20181214-WA0017.jpg" alt="Slide 3">
+                    <div class="text-content">
+                        <h2>Smart - Economy</h2>
+                        <p>Layanan yang berhubungan dengan pengembangan ekonomi berbasis digital.</p>
+                    </div>
+                </div>
+                <div class="slides">
+                    <img src="https://www.yodyakarya.id/images/Gallery/Gedung/2019_MKSukoharjo.jpg" alt="Slide 4">
+                    <div class="text-content">
+                        <h2>Smart - Living</h2>
+                        <p>Layanan terkait mewujudkan lingkungan tempat tinggal yang layak tinggal, nyaman, dan efisien.</p>
+                    </div>
+                </div>
+                <div class="slides">
+                    <img src="https://asset-a.grid.id/photo/2021/12/14/pemberian-penghargaanjpg-20211214065802.jpg" alt="Slide 5">
+                    <div class="text-content">
+                        <h2>Smart - Society</h2>
+                        <p>Layanan dalam membangun ekosistem sosial yang produktif, interaktif, dan berwawasan digital tinggi.</p>
+                    </div>
+                </div>
+                <div class="slides">
+                    <img src="https://aptika.kominfo.go.id/wp-content/uploads/2018/12/Penghargaan-Smartcity-2018-678x381.jpg" alt="Slide 6">
+                    <div class="text-content">
+                        <h2>Smart - Environment</h2>
+                        <p>Layanan terkait tata kelola lingkungan yang baik, bertanggung-jawab, dan berkelanjutan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dots to indicate the current slide -->
+            <div class="dot-content" style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <!-- <div class="slideshow-container">
+                <div class="slides fade">
+                    <img src="img/background-welcome.jpg" alt="Foto 1">
+                </div>
+                <div class="slides fade">
+                    <img src="https://www.yodyakarya.id/images/Gallery/Gedung/2019_MKSukoharjo.jpg" alt="Foto 2">
+                </div>
+                <div class="slides fade">
+                    <img src="https://smartgovernment.id/assets/img/logo_smart_government.png" alt="Foto 3">
+                </div>
+                
+                
+                <div class="dot-container">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div> -->
+            
+        </header>
+
+        <nav class="menu"
+        style="background-image: url(https://img.freepik.com/free-vector/light-gray-seamless-nature-patterned-background-vector_53876-166105.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 100vh;">
+            <div class="arrow-down">
+                &#x25BC;
+            </div>
+            <div class="menu-item" onclick="toggleSubMenu('menu1')" style="margin-top: 5px;">Smart - Governance
+                <div class="description">Layanan terkait pengelolaan tata kelola pemerintahan berbasis teknologi.</div>
+            </div>
+            <div class="sub-menu" id="menu1">
+                <h1>Smart - Governance</h1>
+                <button onclick="location.href='https://forms.gle/WYjVJZR46k5JfQqV6'">Aplikasi Spion (Perijinan
+                    Online)</button>
+                <button onclick="location.href='https://forms.gle/JRMjPMYZcVSjNV2X9'">Aplikasi Musren & Forum</button>
+                <button onclick="location.href='https://forms.gle/D1ZDWKxbKo4H9KeS9'">Portal sukoharjokab.go.id</button>
+                <div class="back-button" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+                    <button onclick="goBack()">Kembali ke Layanan</button>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="toggleSubMenu('menu2')">Smart - Branding
+                <div class="description">Layanan yang berhubungan dengan pengembangan ekonomi berbasis digital.</div>
+            </div>
+            <div class="sub-menu" id="menu2">
+                <h1>Smart - Branding</h1>
+                <button onclick="location.href='https://forms.gle/JBLTvJPEumkyrjkP8'">Desa Wisata Jangglengan</button>
+                <button onclick="location.href='https://forms.gle/9Xs9Eqy8Y5YmJctD7'">Aplikasi RIS (Ruang Investasi
+                    Sukoharjo)</button>
+                <button onclick="location.href='https://forms.gle/2RTkpoyZ4bfdrubHA'">Ikon & Wajah Kota</button>
+                <div class="back-button" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+                    <button onclick="goBack()">Kembali ke Layanan</button>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="toggleSubMenu('menu3')">Smart - Economy
+                <div class="description">Layanan terkait dengan peningkatan kualitas hidup masyarakat.</div>
+            </div>
+            <div class="sub-menu" id="menu3">
+                <h1>Smart - Economy</h1>
+                <button onclick="location.href='https://forms.gle/5dPbCm9Yv3mRoyGU9'">Pemasaran Produk Usaha
+                    Mikro</button>
+                <button onclick="location.href='https://forms.gle/jrNngfwfGTXRYt9F7'">Bursa Kerja</button>
+                <button onclick="location.href='https://forms.gle/1yYoGH5GFgipcThu7'">PAGODA (Pasar Go Digital)</button>
+                <div class="back-button" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+                    <button onclick="goBack()">Kembali ke Layanan</button>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="toggleSubMenu('menu4')">Smart - Living
+                <div class="description">Layanan yang mendukung pembangunan sosial dan masyarakat.</div>
+            </div>
+            <div class="sub-menu" id="menu4">
+                <h1>Smart - Living</h1>
+                <button onclick="location.href='https://forms.gle/mX2Lv8mZB9SgbZ3VA'">Sirusuk & SipSuper</button>
+                <button onclick="location.href='https://forms.gle/guFYLRfVZ4fx5FbX8'">E-Hospital / Daftar
+                    Online</button>
+                <button onclick="location.href='https://forms.gle/7Dt9vttNyBBNZLPM6'">Aplikasi E-Kir</button>
+                <div class="back-button" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+                    <button onclick="goBack()">Kembali ke Layanan</button>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="toggleSubMenu('menu5')">Smart - Society
+                <div class="description">Layanan yang fokus pada keberlanjutan dan lingkungan.</div>
+            </div>
+            <div class="sub-menu" id="menu5">
+                <h1>Smart - Society</h1>
+                <button onclick="location.href='https://forms.gle/ZVAS7zcLAcWD5QEh6'">Kampung KB</button>
+                <button onclick="location.href='https://forms.gle/6MPLbgP9iC4gNNBf6'">Ndog Dadar / Perpustakaan</button>
+                <button onclick="location.href='https://forms.gle/fEV3PCtU7Bk67uuS6'">PSC 119 - Dinkes</button>
+                <div class="back-button" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+                    <button onclick="goBack()">Kembali ke Layanan</button>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="toggleSubMenu('menu6')" style="margin-bottom: 20px;">Smart - Environment
+                <div class="description">Layanan terkait promosi dan pencitraan daerah.</div>
+            </div>
+            <div class="sub-menu" id="menu6">
+                <h1>Smart - Environment</h1>
+                <button onclick="location.href='https://forms.gle/xCs9KdDx92x8Ex5F8'">Pengendalian Pencemaran</button>
+                <button onclick="location.href='https://forms.gle/Ekye8AVLRssHGJzA8'">Kampung Iklim</button>
+                <button onclick="location.href='https://forms.gle/JvTKCdP3PdtTDZWL6'">Energi Alternatif dari
+                    Sampah/Matahari</button>
+                <div class="back-button" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+                    <button onclick="goBack()">Kembali ke Layanan</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- <div id="back-button" style="display: none; text-align: center; margin-top: 20px; margin-bottom: 20px;">
+            <button onclick="goBack()">Kembali ke Layanan</button>
+        </div> -->
+    </div>
+
+    <script>
+        document.querySelectorAll('.sub-menu').forEach(submenu => {
+            submenu.style.display = 'none';
+        });
+
+        function toggleSubMenu(menuId) {
+            const submenu = document.getElementById(menuId);
+            const allMenuItems = document.querySelectorAll('.menu-item');
+
+            allMenuItems.forEach(item => item.style.display = 'none');
+            submenu.style.display = 'block';
+            document.getElementById('back-button').style.display = '';
+        }
+
+        function goBack() {
+            const allMenuItems = document.querySelectorAll('.menu-item');
+            const allSubmenus = document.querySelectorAll('.sub-menu');
+
+            allMenuItems.forEach(item => item.style.display = 'block');
+            allSubmenus.forEach(sub => sub.style.display = 'none');
+            document.getElementById('back-button').style.display = 'none';
+        }
+
+        function startSurvey() {
+            document.getElementById('welcome-page').style.display = 'none';
+            document.getElementById('survey-page').style.display = 'block';
+        }
+    </script>
+
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slides");
+            var dots = document.getElementsByClassName("dot");
+
+            // Hide all slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Reset dots to inactive state
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+
+            // Increment the slideIndex
+            slideIndex++;
+
+            // If slideIndex exceeds the number of slides, reset to 1
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            // Display the current slide
+            slides[slideIndex - 1].style.display = "block";
+
+            // Mark the corresponding dot as active
+            dots[slideIndex - 1].className += " active-dot";
+
+            // Change slide every 3 seconds
+            setTimeout(showSlides, 3000);
+        }
+
+    </script>
+</body>
+
+</html>
